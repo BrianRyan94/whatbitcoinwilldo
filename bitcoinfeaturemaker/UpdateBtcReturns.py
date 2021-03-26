@@ -7,7 +7,7 @@ from sqlalchemy.sql import select
 from sqlalchemy.sql import func
 from sqlalchemy import and_
 
-from dbmodels import ModelFactors 
+from bitcoinfeaturemaker.dbmodels import ModelFactors 
 
 import pandas as pd
 import datetime

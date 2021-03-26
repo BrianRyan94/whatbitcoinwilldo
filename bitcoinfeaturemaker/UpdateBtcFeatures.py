@@ -8,16 +8,16 @@ from sqlalchemy.sql import func
 
 import config 
 
-from dbmodels import ModelFactors 
+from bitcoinfeaturemaker.dbmodels import ModelFactors 
 
 import datetime
 import time
 import pandas as pd
 import traceback
 
-from ReturnFactors import *
-from VolatilityFactors import *
-from VolumeFactors import * 
+from bitcoinfeaturemaker.ReturnFactors import *
+from bitcoinfeaturemaker.VolatilityFactors import *
+from bitcoinfeaturemaker.VolumeFactors import * 
 
 logger = logging.getLogger(__name__)
 

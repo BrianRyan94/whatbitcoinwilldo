@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import LineChart from "./LineChart";
-import { getPriceList } from "../../api/MarketDataQueries";
+import VisualCard from "./VisualCard";
+import { FormatThousand } from "./Util";
+import { getPriceList, getReturnInfo } from "../../api/MarketDataQueries";
 
 const MarketVis = () => {
   var endtime = "Now";
@@ -9,15 +10,28 @@ const MarketVis = () => {
   const [visualData, setVisualData] = useState({
     priceSeries: null,
     priceSeriesError: null,
+    returnsInfoArray: null,
+    returnsInfoError: null,
+    lastPrice: null,
   });
 
   const UpdateVisualData = async () => {
     const priceResult = await getPriceList(endtime, hoursoffset);
+    const ReturnsInfo = await getReturnInfo();
+
+    let last_price = Math.floor(
+      priceResult.data[priceResult.data.length - 1].trade
+    );
+
+    last_price = last_price ? `$${last_price}` : null;
 
     setVisualData({
       ...visualData,
       priceSeries: priceResult.data,
       priceSeriesError: priceResult.error,
+      returnsInfoArray: ReturnsInfo.data,
+      returnsInfoError: ReturnsInfo.error,
+      lastPrice: last_price,
     });
   };
 
@@ -30,10 +44,13 @@ const MarketVis = () => {
 
   return (
     <>
-      <LineChart
+      <VisualCard
         dataseries={visualData.priceSeries}
-        title="Price"
+        title={`Price ${
+          visualData.lastPrice ? FormatThousand(visualData.lastPrice) : ""
+        }`}
         error={visualData.priceSeriesError}
+        infoArray={visualData.returnsInfoArray}
       />
     </>
   );

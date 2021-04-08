@@ -28,6 +28,7 @@
     "@nivo/core": "^0.67.0",
     "@nivo/line": "^0.67.0",
     "axios": "^0.21.1",
+    "react-responsive": "^8.2.0",
     "react-router-dom": "^5.2.0"
   }
 }

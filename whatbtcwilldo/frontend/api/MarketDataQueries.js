@@ -12,4 +12,13 @@ const getPriceList = async (endtime, hoursoffset) => {
   }
 };
 
-export { getPriceList };
+const getReturnInfo = async () => {
+  const response = await axios.get("/api/returninfo");
+  if (response.status == 200) {
+    return { data: response.data };
+  } else {
+    return { error: "Error occurred retrieving data" };
+  }
+};
+
+export { getPriceList, getReturnInfo };

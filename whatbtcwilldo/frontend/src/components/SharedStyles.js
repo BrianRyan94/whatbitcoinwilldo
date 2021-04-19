@@ -6,6 +6,10 @@ const SharedStyles = makeStyles({
     padding: "15px",
   },
 
+  primary_color: {
+    color: "#2789f5",
+  },
+
   secondary_background: {
     backgroundColor: "rgba(20, 20, 20, 0.05)",
   },
@@ -35,6 +39,69 @@ const SharedStyles = makeStyles({
 
   RowWrap: {
     flexFlow: "row wrap",
+  },
+
+  legend: {
+    display: "flex",
+    flexDirection: "row",
+    marginRight: "10px",
+    justifyContent: "space_between",
+    marginTop: "10px",
+  },
+
+  legend_icon: {
+    marginLeft: "10px",
+    fontSize: "14px",
+  },
+
+  legend_text: {
+    fontSize: "12px",
+    fontFamily: "Quicksand",
+  },
+
+  main_content: {
+    marginTop: "20px",
+  },
+
+  LookbackSelection: {
+    justifyContent: "center",
+  },
+
+  LookbackOption: {
+    backgroundColor: "red",
+    border: "1px solid black",
+  },
+
+  visualCard: {
+    marginTop: "15px",
+    marginLeft: "10px",
+    marginRight: "10px",
+    flex: 1,
+  },
+
+  centered_within: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+
+  hover_container: {
+    borderRadius: "3px",
+    backgroundColor: "white",
+    padding: "3px",
+  },
+
+  Footer: {
+    width: "100%",
+    margin: "auto",
+    marginTop: "20px",
+    height: "100px",
+    textAlign: "center",
+    display: "flex",
+    height: "40px",
+    flexDirection: "column",
+    justifyContent: "center",
+    color: "white",
   },
 });
 

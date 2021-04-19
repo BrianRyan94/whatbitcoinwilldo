@@ -20,7 +20,7 @@ const NavBar = () => {
         variant="h6"
         className={`${shared_styles.header_text} ${comp_styles.nav_logo}`}
       >
-        WhatBitcoinWilldo
+        WhatBitcoinIsDoing
       </Typography>
     </AppBar>
   );

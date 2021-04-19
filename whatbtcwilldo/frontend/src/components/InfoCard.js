@@ -46,8 +46,19 @@ const InfoCard = ({ infoArray }) => {
   const comp_styles = compStyles();
   const shared_styles = SharedStyles();
 
-  const isLargest = useMediaQuery({ query: "(min-width: 700px)" });
-  const isSmallest = useMediaQuery({ query: "(max-width: 380px)" });
+  //if it is a narrow screen
+  const narrow_screen = useMediaQuery({ maxWidth: 380 });
+  //if it is big enough to have 2 on each row
+  const row_display = useMediaQuery({ minWidth: 1000 });
+  //if it is an extra wide screen
+  const wide_screen = useMediaQuery({ minWidth: 1300 });
+  //is a large column
+  const large_column = useMediaQuery({ minWidth: 700 });
+
+  const isLargest =
+    wide_screen | ((row_display == false) & (large_column == true));
+
+  const isSmallest = narrow_screen;
 
   return (
     <>

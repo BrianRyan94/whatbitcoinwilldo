@@ -8,7 +8,7 @@ long_description = "Package for creating secondary features, analysing and makin
   
 setup( 
         name ='whatbitcoinwilldo', 
-        version ='1.0.1', 
+        version ='1.0.2', 
         author ='Brian Ryan', 
         author_email ='brian.ryan@ucdconnect.ie', 
         url ='https://github.com/BrianRyan94/whatbitcoinwilldo', 

@@ -95,5 +95,4 @@ urllib3==1.26.4
 wcwidth==0.2.5
 webencodings==0.5.1
 Werkzeug==1.0.1
-whatbitcoinwilldo @ git+https://github.com/BrianRyan94/whatbitcoinwilldo.git@09d99aecca3b3e5dbfa071b2b75e81e8d09ce188
 wrapt==1.12.1

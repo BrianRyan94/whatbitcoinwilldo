@@ -16,7 +16,7 @@ setup(
         long_description = long_description, 
         long_description_content_type ="text/markdown", 
         license ='MIT', 
-        packages = find_packages(),  
+        packages = ['bitcoinfeaturemaker'],  
         keywords ='bitcoin analysis', 
         install_requires = requirements, 
         zip_safe = False

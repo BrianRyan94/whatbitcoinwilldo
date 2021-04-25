@@ -98,6 +98,8 @@ class VolatilityList(View):
 
         smoothed_vol = []
 
+        print(volatilities)
+
         for i in range(len(volatilities)):
 
             vols = volatilities[max(i-4, 0):i+1]
@@ -201,13 +203,13 @@ class VolatilityList(View):
 
         volatility_data['volatility'] = volatility_data[volatility_column]  
 
+        volatility_data = volatility_data.dropna(how="any")  
+        
         volatility_data['volatility'] = self.smooth_vol(list(volatility_data['volatility']))
         
         volatility_data = volatility_data[['dt', 'volatility']]
 
-        volatility_data['dt'] = volatility_data['dt'].apply(lambda x: datetime.datetime.strftime(x, '%Y-%m-%dT%H:%M:%SZ')) 
-        
-        volatility_data = volatility_data.dropna(how="any")   
+        volatility_data['dt'] = volatility_data['dt'].apply(lambda x: datetime.datetime.strftime(x, '%Y-%m-%dT%H:%M:%SZ'))  
 
         volatility_data['volatility'] = volatility_data['volatility'].apply(str)
 
